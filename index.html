@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rekomendasi Skincare - Berdasarkan Jenis Kulit</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1> Rekomendasi Skincare </h1>
+            <p class="subtitle">Dapatkan rekomendasi produk skincare yang tepat berdasarkan jenis kulit Anda</p>
+        </header>
+
+        <main>
+            <div class="form-section">
+                <h2>Pilih Jenis Kulit Anda</h2>
+                <form id="skinTypeForm">
+                    <div class="skin-type-options">
+                        <label class="skin-option">
+                            <input type="radio" name="skinType" value="normal">
+                            <div class="option-card">
+                                <div class="icon">🌿</div>
+                                <h3>Kulit Normal</h3>
+                                <p>Seimbang, tidak terlalu berminyak atau kering</p>
+                            </div>
+                        </label>
+
+                        <label class="skin-option">
+                            <input type="radio" name="skinType" value="oily">
+                            <div class="option-card">
+                                <div class="icon">💧</div>
+                                <h3>Kulit Berminyak</h3>
+                                <p>Mudah berkilau, pori-pori besar, cenderung berjerawat</p>
+                            </div>
+                        </label>
+
+                        <label class="skin-option">
+                            <input type="radio" name="skinType" value="dry">
+                            <div class="option-card">
+                                <div class="icon">🌵</div>
+                                <h3>Kulit Kering</h3>
+                                <p>Terasa kencang, kasar, mudah mengelupas</p>
+                            </div>
+                        </label>
+
+                        <label class="skin-option">
+                            <input type="radio" name="skinType" value="combination">
+                            <div class="option-card">
+                                <div class="icon">🎭</div>
+                                <h3>Kulit Kombinasi</h3>
+                                <p>Berminyak di T-zone, kering di area lain</p>
+                            </div>
+                        </label>
+
+                        <label class="skin-option">
+                            <input type="radio" name="skinType" value="sensitive">
+                            <div class="option-card">
+                                <div class="icon">🛡️</div>
+                                <h3>Kulit Sensitif</h3>
+                                <p>Mudah iritasi, kemerahan, atau alergi</p>
+                            </div>
+                        </label>
+                    </div>
+
+                    <button type="submit" class="submit-btn">Dapatkan Rekomendasi</button>
+                </form>
+            </div>
+
+            <div id="recommendations" class="recommendations-section hidden">
+                <h2>Rekomendasi Skincare untuk Anda</h2>
+                <div id="recommendationsContent"></div>
+            </div>
+        </main>
+
+        <footer>
+            <p>@Create by Cipaa.</p>
+        </footer>
+    </div>
+
+    <!-- Chatbot untuk Rekomendasi Kulit -->
+    <div class="chatbot-wrapper">
+        <button class="chatbot-toggle-btn" id="chatbotToggle" aria-label="Buka chatbot">
+            <span class="chatbot-icon">💬</span>
+        </button>
+        
+        <div class="chatbot-container" id="chatbotContainer">
+            <div class="chatbot-header">
+                <div class="chatbot-header-content">
+                    <span class="chatbot-avatar">🤖</span>
+                    <div>
+                        <h3>Konsultan Skincare</h3>
+                        <p class="chatbot-status">Online</p>
+                    </div>
+                </div>
+                <button class="chatbot-close-btn" id="chatbotClose" aria-label="Tutup chatbot">×</button>
+            </div>
+            
+            <div class="chatbot-messages" id="chatbotMessages">
+                <div class="message bot-message">
+                    <div class="message-content">
+                        <p>Halo! 👋 Saya adalah konsultan skincare virtual Anda.</p>
+                        <p>Saya bisa membantu memberikan rekomendasi produk skincare berdasarkan jenis kulit Anda.</p>
+                        <p>Apa yang ingin Anda tanyakan?</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="chatbot-quick-questions">
+                <button class="quick-btn" data-question="Bagaimana cara mengetahui jenis kulit saya?">Cara mengetahui jenis kulit?</button>
+                <button class="quick-btn" data-question="Rekomendasi produk untuk kulit normal">Produk kulit normal</button>
+                <button class="quick-btn" data-question="Rekomendasi produk untuk kulit berminyak">Produk kulit berminyak</button>
+            </div>
+            
+            <div class="chatbot-input-area">
+                <input type="text" id="chatbotInput" placeholder="Tulis pertanyaan Anda..." autocomplete="off">
+                <button id="chatbotSend" class="chatbot-send-btn" aria-label="Kirim pesan">Kirim</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
+
